@@ -525,8 +525,9 @@ static void msm_kexec_hardboot_hook(void)
 
 	// These are executed on normal reboot, but with kexec-hardboot,
 	// they reboot/panic the system immediately.
-#if 0
 	qpnp_pon_system_pwr_off(PON_POWER_OFF_WARM_RESET);
+
+#if 0
 	/* Needed to bypass debug image on some chips */
 	msm_disable_wdog_debug();
 	halt_spmi_pmic_arbiter();
